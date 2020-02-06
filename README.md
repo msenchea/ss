@@ -8,6 +8,6 @@ j usage example: j test.java
 
 
 ### **mkf**
-mkf (make file) : creates a file in the current directory; if a template exists for the file extension provided, the file will                   include the template in it. Currently only supports .java and .sh files. More will be added as I need them.
+**mkf (make file)** : creates a file in the current directory; if a template exists for the file extension provided, the file will                   include the template in it. Currently only supports .java and .sh files. More will be added as I need them.
 
-mkf usage example: mkf test.java
+**mkf usage example**: mkf test.java
