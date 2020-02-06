@@ -1,0 +1,23 @@
+#!/bin/bash
+
+FILE=$1
+FILETYPE=$(echo $FILE| cut -d '.' -f 2)
+FILENAME=$(echo $FILE| cut -d '.' -f 1)
+
+if [ -f $FILE ]; then
+	echo "$FILE already exists"
+else
+	if [ "$FILETYPE" == "java" ]; then
+		touch "$FILE"
+		sed "s/FILENAME/"$FILENAME"/g" /home/marius/bin/mkf_templates/java.txt > "$FILE"
+		subl "$FILE"
+	elif [ "$FILETYPE" == "sh" ]; then
+		touch "$FILE"
+		cat /home/marius/bin/mkf_templates/sh.txt >> "$FILE"
+		subl "$FILE"
+	else
+		echo "file extension <.$FILETYPE> is not supported by mkf"
+	fi
+
+fi
+ 
